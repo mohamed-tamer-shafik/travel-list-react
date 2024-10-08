@@ -1,13 +1,287 @@
-body {
+/* General Rules starts */
+@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Quicksand:wght@300..700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  border: none;
+  outline: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ul {
+  list-style: none;
 }
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+}
+/* General Rules ends */
+
+/* Common styles starts */
+.text-center {
+  text-align: center;
+}
+
+.primary-color {
+  color: #5a3e2b;
+}
+
+.primary-bg {
+  background-color: #ffebb3;
+}
+
+.primary-family {
+  font-family: "Quicksand", sans-serif;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fz-18 {
+  font-size: 18px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+/* Common styles ends */
+
+/* General Components starts */
+/* dropList component starts */
+.list {
+  padding-left: 20px;
+}
+
+.list--form {
+  width: 80px;
+  height: 45px;
+  border-radius: 45px;
+  font-size: 18px;
+}
+
+@media (min-width: 576px) {
+  .list--form {
+    width: 105px;
+  }
+}
+
+.list--main {
+  height: 35px;
+  border-radius: 35px;
+  width: 200px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 576px) {
+  .list--main {
+    width: 250px;
+  }
+}
+/* dropList component ends */
+/* General Components ends */
+
+/* website layout implementation starts */
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+/* website layout implementation ends */
+
+/* Header Component starts */
+.header {
+  background-color: #f4a226;
+  padding: 40px 0px;
+}
+
+.header__emoji {
+  font-size: 30px;
+}
+
+@media (min-width: 576px) {
+  .header__emoji {
+    font-size: 51px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header__emoji {
+    font-size: 70px;
+  }
+}
+
+.header__main-title {
+  font-family: "Monoton", sans-serif;
+  display: inline-block;
+  margin: 0px 10px;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+@media (min-width: 576px) {
+  .header__main-title {
+    font-size: 57px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header__main-title {
+    font-size: 80px;
+  }
+}
+/* Header Component ends */
+
+/* Form Component starts */
+.form {
+  padding: 35px 0px;
+  background-color: #e5771f;
+}
+
+.form__label {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 576px) {
+  .form__label {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 992px) {
+  .form__label {
+    display: inline;
+    margin-right: 20px;
+  }
+}
+
+.form__field {
+  height: 45px;
+  border-radius: 45px;
+  margin: 0px 7px;
+  font-size: 18px;
+  padding-left: 20px;
+}
+
+@media (min-width: 576px) {
+  .form__field {
+    width: 250px;
+  }
+}
+
+.form__btn {
+  height: 45px;
+  border-radius: 45px;
+  font-size: 18px;
+  width: 85px;
+  background-color: #76c7ad;
+}
+
+@media (min-width: 576px) {
+  .form__btn {
+    width: 105px;
+  }
+}
+/* Form Component ends */
+
+/* Main Component starts */
+.main {
+  background-color: #5a3e2b;
+  flex-grow: 1;
+  padding: 25px 10%;
+  overflow: hidden;
+}
+
+.main__items-container {
+  height: 80%;
+  padding-right: 5px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-auto-rows: min-content;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+/* Item child component starts */
+.main__item {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main__checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: #e5771f;
+}
+
+.main__item-text {
+  font-size: 24px;
+  margin: 0px 10px;
+  color: #ffebb3;
+}
+.main__item-text--packed {
+  text-decoration: line-through;
+}
+.main__close-btn {
+  color: #f92f60;
+  font-size: 42px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  overflow: hidden;
+  font-weight: 500;
+}
+/* Item child component ends */
+
+.main__btn {
+  height: 35px;
+  border-radius: 35px;
+  margin-left: 20px;
+  width: 100px;
+}
+
+@media (min-width: 576px) {
+  .main__btn {
+    width: 125px;
+  }
+}
+/* Main Component ends */
+
+/* Footer Component starts */
+.footer {
+  padding: 30px 0px;
+  background-color: #76c7ad;
+  font-size: 17px;
+}
+
+@media (min-width: 576px) {
+  .footer__content {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer__content {
+    font-size: 24px;
+  }
+}
+/* Footer Component ends */
