@@ -25,7 +25,7 @@ export default function Main({
   else sortedItems = items;
   return (
     <main className="main">
-      <div className="main__items-container">
+      <div className="main__items-container flex">
         {sortedItems.map((item) => (
           <Item
             key={item.id}

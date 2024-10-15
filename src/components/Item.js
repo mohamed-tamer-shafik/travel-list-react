@@ -4,7 +4,7 @@ export default function Item({
   onCheckBoxChange,
 }) {
   return (
-    <div className="main__item ">
+    <div className="main__item flex">
       <input
         type="checkbox"
         className="main__checkbox pointer "
@@ -19,7 +19,7 @@ export default function Item({
         {quantity} {description}
       </span>
       <button
-        className="main__close-btn pointer primary-family"
+        className="main__close-btn pointer primary-family flex"
         onClick={() => onItemRemoving(id)}
       >
         &times;
